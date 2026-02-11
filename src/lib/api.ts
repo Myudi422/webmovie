@@ -87,22 +87,8 @@ export interface EpisodeInfo {
 
 export interface DetailData {
     success: boolean;
-    data: {
-        subjectId: string;
-        subjectType: number;
-        title: string;
-        description: string;
-        releaseDate: string;
-        duration: number;
-        genre: string[];
-        cover: ImageData;
-        countryName: string;
-        imdbRatingValue: number;
-        detailPath: string;
-        stafflist?: { name: string; role: string; image?: ImageData }[];
-        seasons?: SeasonInfo[];
-        [key: string]: unknown;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: any;
 }
 
 export interface SubtitleTrack {
@@ -119,19 +105,14 @@ export interface SourceQuality {
 
 export interface SourceData {
     success: boolean;
-    data: {
-        qualities?: SourceQuality[];
-        subtitles?: SubtitleTrack[];
-        [key: string]: unknown;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: any;
 }
 
 export interface StreamData {
     success: boolean;
-    data: {
-        originalUrl: string;
-        [key: string]: unknown;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: any;
 }
 
 // Build the API url param: /detail/{slug}?id={subjectId}
