@@ -1,4 +1,4 @@
-const API_BASE = "http://moviebox.ccgnimex.my.id:8000";
+const API_BASE = "https://moviebox.ccgnimex.my.id";
 
 export interface ImageData {
     url: string;
