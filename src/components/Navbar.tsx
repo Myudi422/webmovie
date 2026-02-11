@@ -33,6 +33,12 @@ export default function Navbar() {
                 >
                     Explore
                 </Link>
+                <Link
+                    href="/history"
+                    className={`navbar-link ${pathname === "/history" ? "active" : ""}`}
+                >
+                    History
+                </Link>
             </div>
             <Link href="/search" className="navbar-search-btn" aria-label="Search">
                 🔍

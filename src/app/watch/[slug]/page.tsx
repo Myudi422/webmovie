@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { getSources, getDetail, getDirectStreamUrl, buildDetailUrl } from "@/lib/api";
+import { addToHistory } from "@/lib/history";
 import { Suspense } from "react";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -55,6 +56,9 @@ function WatchContent() {
                     const subject = resData?.subject;
                     if (subject) {
                         setPoster(subject.cover?.url || "");
+                        // Add to history
+                        addToHistory(subject);
+
                         if (isSeries && seasonNum && episodeNum) {
                             setTitle(`${subject.title} - S${seasonNum}E${episodeNum}`);
                             // Get episode count from resource.seasons

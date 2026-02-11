@@ -2,6 +2,8 @@ import { getHomepage } from "@/lib/api";
 import HeroBanner from "@/components/HeroBanner";
 import CategoryRow from "@/components/CategoryRow";
 
+import HistorySection from "@/components/HistorySection";
+
 export default async function HomePage() {
   let bannerItems: import("@/lib/api").BannerItem[] = [];
   let categories: { title: string; subjects: import("@/lib/api").Subject[] }[] = [];
@@ -29,6 +31,7 @@ export default async function HomePage() {
     <>
       {bannerItems.length > 0 && <HeroBanner items={bannerItems} />}
       <div className="categories-section">
+        <HistorySection />
         {categories.map((cat, i) => (
           <CategoryRow key={`${cat.title}-${i}`} title={cat.title} subjects={cat.subjects} />
         ))}
